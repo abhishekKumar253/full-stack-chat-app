@@ -19,11 +19,7 @@ NODE_ENV=...
 PORT=...
 ```
 
-### Install dependencies
-
-```shell
-npm install
-```
+### Run this app locally
 
 ### Build the app
 
@@ -34,5 +30,5 @@ npm run build
 ### Start the app
 
 ```shell
-npm start
+npm run start
 ```
