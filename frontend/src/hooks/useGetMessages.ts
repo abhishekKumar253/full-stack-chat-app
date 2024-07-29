@@ -14,7 +14,7 @@ const useGetMessages = () => {
       try {
         const res = await fetch(`/api/messages/${selectedConversation.id}`);
         const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "An error occured");
+        if (!res.ok) throw new Error(data.error || "An error occurred");
         setMessages(data);
       } catch (error: any) {
         toast.error(error.message);
@@ -22,9 +22,10 @@ const useGetMessages = () => {
         setLoading(false);
       }
     };
+
     getMessages();
   }, [selectedConversation, setMessages]);
+
   return { messages, loading };
 };
-
 export default useGetMessages;

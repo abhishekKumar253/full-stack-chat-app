@@ -1,8 +1,8 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import useGetConversations from "../../hooks/useGetConversations";
 import useConversation from "../../zustand/useConversation";
+import useGetConversations from "../../hooks/useGetConversations";
 
 const SearchInput = () => {
   const [search, setSearch] = useState("");

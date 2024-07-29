@@ -7,6 +7,7 @@ type SignupInputs = {
   username: string;
   password: string;
   confirmPassword: string;
+  gender: string;
 };
 
 const useSignup = () => {
@@ -28,7 +29,6 @@ const useSignup = () => {
       if (!res.ok) throw new Error(data.error);
       setAuthUser(data);
     } catch (error: any) {
-      console.log(error.message);
       toast.error(error.message);
     } finally {
       setLoading(false);
@@ -37,5 +37,4 @@ const useSignup = () => {
 
   return { loading, signup };
 };
-
 export default useSignup;

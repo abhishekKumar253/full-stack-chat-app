@@ -27,7 +27,7 @@ const AuthContext = createContext<{
   isLoading: true,
 });
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 export const useAuthContext = () => {
   return useContext(AuthContext);
 };
@@ -47,7 +47,6 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         }
         setAuthUser(data);
       } catch (error: any) {
-        console.error(error);
         toast.error(error.message);
       } finally {
         setIsLoading(false);

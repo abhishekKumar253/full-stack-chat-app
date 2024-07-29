@@ -8,11 +8,11 @@ export const signup = async (req: Request, res: Response) => {
     const { fullName, username, password, confirmPassword, gender } = req.body;
 
     if (!fullName || !username || !password || !confirmPassword || !gender) {
-      return res.status(400).json({ error: "Please fill all the fields" });
+      return res.status(400).json({ error: "Please fill in all fields" });
     }
 
     if (password !== confirmPassword) {
-      return res.status(400).json({ error: "Passwords do not match" });
+      return res.status(400).json({ error: "Passwords don't match" });
     }
 
     const user = await prisma.user.findUnique({ where: { username } });
@@ -85,7 +85,7 @@ export const login = async (req: Request, res: Response) => {
 
 export const logout = async (req: Request, res: Response) => {
   try {
-    res.cookie("jwt", "", { maxAge: -1 });
+    res.cookie("jwt", "", { maxAge: 0 });
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error: any) {
     res.status(500).json({ error: "Error in logout controlle" });

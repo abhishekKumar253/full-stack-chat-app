@@ -3,6 +3,7 @@ import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
+import {  server } from "./socket/socket.js";
 
 dotenv.config();
 
@@ -17,6 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`⚙️ Server is running at port`, PORT);
 });
